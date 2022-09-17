@@ -5,7 +5,7 @@ Assessment test of Car Track
 
 - How to use this app
 
-  - You will get a log in page where in you need to fill below details to login
+  - You will get a login page where in you need to fill below details to login
   
   - UserName : aadil_majeed
   - Password : car_track
