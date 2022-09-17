@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CountryViewController" customModule="Cartrack" customModuleProvider="target">
+            <connections>
+                <outlet property="searchBar" destination="uuK-hD-OTR" id="UiZ-F0-PLw"/>
+                <outlet property="tableView" destination="Jv8-kp-Lxd" id="N71-qd-Zyg"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Jv8-kp-Lxd">
+                    <rect key="frame" x="0.0" y="88" width="428" height="838"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <searchBar key="tableHeaderView" contentMode="redraw" id="uuK-hD-OTR">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="44"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </searchBar>
+                </tableView>
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B2A-kI-QgY">
+                    <rect key="frame" x="0.0" y="44" width="428" height="44"/>
+                    <items>
+                        <navigationItem title="Country List" id="Gxo-vg-Imy">
+                            <barButtonItem key="rightBarButtonItem" image="cross" id="69Q-X8-9hi">
+                                <connections>
+                                    <action selector="dismiss:" destination="-1" id="E4U-bA-Vn9"/>
+                                </connections>
+                            </barButtonItem>
+                        </navigationItem>
+                    </items>
+                </navigationBar>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="B2A-kI-QgY" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="H2m-11-3A2"/>
+                <constraint firstItem="B2A-kI-QgY" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Pgz-Hs-fWA"/>
+                <constraint firstItem="Jv8-kp-Lxd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Y0i-3X-A7x"/>
+                <constraint firstItem="B2A-kI-QgY" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="and-RX-FWd"/>
+                <constraint firstItem="Jv8-kp-Lxd" firstAttribute="top" secondItem="B2A-kI-QgY" secondAttribute="bottom" id="oFy-4T-Or9"/>
+                <constraint firstAttribute="bottom" secondItem="Jv8-kp-Lxd" secondAttribute="bottom" id="wA0-fC-edn"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Jv8-kp-Lxd" secondAttribute="trailing" id="xFP-34-tBZ"/>
+            </constraints>
+            <point key="canvasLocation" x="37.681159420289859" y="21.428571428571427"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="cross" width="34" height="34"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
