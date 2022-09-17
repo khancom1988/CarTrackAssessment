@@ -14,6 +14,8 @@ class UserViewController: UIViewController {
     
     @IBOutlet private weak var tableView: UITableView!
     
+    private var refreshControl = UIRefreshControl()
+    
     init(coordinator: UserCoordinator, viewModel: UserViewModel) {
         self.coordinator = coordinator
         self.viewModel = viewModel
@@ -33,6 +35,9 @@ class UserViewController: UIViewController {
         
         tableView.dataSource = self
         
+        self.refreshControl.addTarget(self, action: #selector(self.refreshData(_:)), for: .valueChanged)
+        self.tableView?.addSubview(refreshControl)
+
         ProgressView.shared.loadOn(view: self.view, animated: true)
         
         self.viewModel.usersPublisher = { [weak self] result in
@@ -49,6 +54,7 @@ class UserViewController: UIViewController {
                 break
             }
             ProgressView.shared.removeFrom(view: weakSelf.view, animated: true)
+            self?.refreshControl.endRefreshing()
         }
         
         self.viewModel.fetchUsers()
@@ -68,6 +74,12 @@ class UserViewController: UIViewController {
         
         self.present(alert, animated: true, completion: nil)
     }
+    
+    @objc func refreshData(_ sender:AnyObject){
+        self.refreshControl.beginRefreshing()
+        self.viewModel.fetchUsers()
+    }
+
 }
 
 extension UserViewController: UITableViewDelegate, UITableViewDataSource {
